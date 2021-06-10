@@ -1,11 +1,66 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<% include partials/header %>
+<body>
+  <!-- navbBar -->
+  <nav class="navbar navbar-dark bg-dark mb-4">
+    <a href="/" class="navbar-brand">Crud mongoDb</a>
+  </nav>
+  <!-- /navbBar -->
+
+  <div class="container">
+    <div class="row">
+      <!-- Form -->
+      <div class="col-md-5">
+        <div class="card">
+          <div class="card-body">
+            <form action="/add" method="POST">
+              <!-- Title -->
+              <div class="form-group m-2">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="title"
+                  value=""
+                  placeholder="Inserta un titulo"
+                />
+              </div>
+              <!-- /Title -->
+
+              <!-- Description -->
+              <div class="form-group m-2">
+                <textarea
+                  class="form-control"
+                  type="text"
+                  name="description"
+                  cols="80"
+                  value=""
+                  placeholder="Inserta una descripcion"
+                ></textarea>
+              </div>
+              <!-- Description -->
+
+              <button class="btn btn-primary" type="submit">Agregar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Form -->
+
+      <!-- List -->
+      <div class="col-md-7">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Numero</th>
+              <th>Titulo</th>
+              <th>Descripcion</th>
+              <th>Operacion</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <!-- List -->
+    </div>
+  </div>
+
+  <% include partials/footer %>
+</body>
