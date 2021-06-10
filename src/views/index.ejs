@@ -65,7 +65,7 @@
               <td class->
                 <a
                 class="<%= tasks[i].status ? 'btn btn-success' : 'btn btn-dark'%>"
-                href="/turn/<%= tasks[i]._id %>">Done</a>
+                href="/turn/<%= tasks[i]._id %>"><%= tasks[i].status ? 'Hecho' : 'Falta' %></a>
               <a href="/delete/<%= tasks[i]._id %>"
                 class="btn btn-danger">
                 <i class="fas fa-trash btn-info"></i>
