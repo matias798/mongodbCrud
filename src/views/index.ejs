@@ -56,6 +56,27 @@
               <th>Operacion</th>
             </tr>
           </thead>
+          <tbody>
+            <% for (let i= 0 ; i < tasks.length; i ++){%>
+<tr>
+              <td><%=i+1%></td>
+              <td><%=tasks[i].title%></td>
+              <td><%=tasks[i].description%></td>
+              <td class->
+                <a
+                class="<%= tasks[i].status ? 'btn btn-success' : 'btn btn-dark'%>"
+                href="/turn/<%= tasks[i]._id %>">Done</a>
+              <a href="/delete/<%= tasks[i]._id %>"
+                class="btn btn-danger">
+                <i class="fas fa-trash btn-info"></i>
+                
+              </a>
+              <a href="/edit/<%= tasks[i]._id %>" class="btn btn-info">
+                <i class="fas fa-edit btn-info"></i>
+              </a>  </td>
+            </tr>
+            <% } %>
+          </tbody>
         </table>
       </div>
       <!-- List -->
